@@ -155,6 +155,9 @@ def main():
     parser.add_argument(
         '--use_ngraph_staticlibs',
         help="Builds and links ngraph statically\n",
+        action="store_true")
+
+    parser.add_argument(
         '--build_base',
         help="Builds a base ngtf image in docker\n",
         action="store_true")
