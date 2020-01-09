@@ -2,7 +2,7 @@
 
 This directory contains an example C++ application that uses TensorFlow and nGraph. The example creates a simple computation graph and executes using nGraph computation backend.
 
-The application is linked with TensorFlow C++ library and nGraph-TensorFlow bridge library. 
+The application is linked with TensorFlow C++ library and nGraph-TensorFlow bridge library.
 
 ## prerequisites
 
@@ -34,7 +34,7 @@ Before running the application, set the `LD_LIBRARY_PATH` (or `DYLD_LIBRARY_PATH
 
 Where `NGRAPH_BRIDGE_DIR` should point to the directory where ngraph-tf was cloned.
 
-:warning: Note: If this example is built on CentOS then the library directory 
+:warning: Note: If this example is built on CentOS then the library directory
 is `lib64` - so please set the `LD_LIBRARY_PATH` accordingly
 
 Next run the executable `./hello_tf`

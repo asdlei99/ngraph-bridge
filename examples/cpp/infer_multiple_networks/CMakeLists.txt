@@ -60,7 +60,7 @@ if (APPLE)
 endif()
 
 if(NGRAPH_BRIDGE_STATIC_LIB_ENABLE)
-    target_link_libraries(infer_multiple_networks 
+    target_link_libraries(infer_multiple_networks
         -Wl,--whole-archive
             ngraph_bridge_static
         -Wl,--no-whole-archive

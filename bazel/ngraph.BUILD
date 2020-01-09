@@ -13,7 +13,7 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 # ==============================================================================
-licenses(["notice"])  
+licenses(["notice"])
 exports_files(["LICENSE"])
 
 load("@ngraph_bridge//:cxx_abi_option.bzl", "CXX_ABI")
@@ -251,7 +251,7 @@ cc_library(
         "src/ngraph/runtime/cpu/pass/cpu_rnn_fusion.cpp",
         "src/ngraph/runtime/cpu/pass/cpu_workspace_insertion.cpp",
         "src/ngraph/runtime/cpu/ngraph_version.cpp",
-        "src/ngraph/state/rng_state.cpp", 
+        "src/ngraph/state/rng_state.cpp",
     ]),
     deps = [
         ":ngraph_headers",

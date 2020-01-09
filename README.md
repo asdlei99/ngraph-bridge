@@ -39,7 +39,7 @@ a variety of nGraph-enabled backends: CPU, GPU, and custom silicon like the
 
 1. Install TensorFlow:
 
-        pip install -U tensorflow==1.14.0
+        pip install -U tensorflow==1.15.0
 
 2. Install `ngraph-tensorflow-bridge`:
 
@@ -117,7 +117,7 @@ To use the `ngraph-tensorflow-bridge`, activate the following `virtualenv` to st
  
 Alternatively, you can also install the TensorFlow and nGraph bridge outside of a `virtualenv`. The Python `whl` files are located in the `build_cmake/artifacts/` and `build_cmake/artifacts/tensorflow` directories, respectively.
 
-Select the help option of `build_ngtf.py` script to learn more about various build options and how to build other backends. 
+Select the help option of `build_ngtf.py` script to learn more about various build options and how to build other backends.
 
 Verify that `ngraph-bridge` installed correctly:
 
@@ -126,19 +126,19 @@ Verify that `ngraph-bridge` installed correctly:
 
     This will produce something like this:
 
-        TensorFlow version:  <1.14.0>
-        nGraph bridge version: <b'0.14.0'>
-        nGraph version used for this build: b'0.18.0+c5d52f1'
-        TensorFlow version used for this build: <v1.14.0-...>
-        CXX11_ABI flag used for this build: 0
-        nGraph bridge built with Grappler: False
-        nGraph bridge built with Variables and Optimizers Enablement: False
+    TensorFlow version:  <1.15.0>
+    nGraph bridge version: <b'0.15.0'>
+    nGraph version used for this build: b'0.18.0+c5d52f1'
+    TensorFlow version used for this build: <v1.15.0-...>
+    CXX11_ABI flag used for this build: 0
+    nGraph bridge built with Grappler: False
+    nGraph bridge built with Variables and Optimizers Enablement: False
 
-    Note: The version of the ngraph-tensorflow-bridge is not going to be exactly the same as when you build from source. This is due to delay in the source release and publishing the corresponding Python wheel. 
+    Note: The version of the ngraph-tensorflow-bridge is not going to be exactly the same as when you build from source. This is due to delay in the source release and publishing the corresponding Python wheel.
 
 ## Classify an image
 
-Once you have installed nGraph bridge, you can use TensorFlow to train a neural network or run inference using a trained model. 
+Once you have installed nGraph bridge, you can use TensorFlow to train a neural network or run inference using a trained model.
 
 Use TensorFlow with nGraph to classify an image using a [frozen model]. 
 
@@ -164,7 +164,7 @@ Modify the downloaded TensorFlow script to run TensorFlow with nGraph optimizati
         ...
         config = tf.ConfigProto()
         config_ngraph_enabled = ngraph_bridge.update_config(config)
-        sess = tf.Session(config=config_ngraph_enabled) 
+        sess = tf.Session(config=config_ngraph_enabled)
 
 Run the classification:
 
@@ -172,7 +172,7 @@ Run the classification:
                 --image grace_hopper.jpg --input_layer=input \
                 --output_layer=InceptionV3/Predictions/Reshape_1 \
                 --input_height=299 --input_width=299 \
-                --labels imagenet_slim_labels.txt 
+                --labels imagenet_slim_labels.txt
 
 This will print the following results:
 
@@ -192,14 +192,14 @@ Adding runtime options for a CPU backend applies to training and inference.
 
 By default nGraph runs with a CPU backend. To get the best performance of the CPU backend, add the following option:
 
-        OMP_NUM_THREADS=<num_cores> KMP_AFFINITY=granularity=fine,compact,1,0 \ 
-        python label_image.py --graph inception_v3_2016_08_28_frozen.pb 
+        OMP_NUM_THREADS=<num_cores> KMP_AFFINITY=granularity=fine,compact,1,0 \
+        python label_image.py --graph inception_v3_2016_08_28_frozen.pb
                 --image grace_hopper.jpg --input_layer=input \
                 --output_layer=InceptionV3/Predictions/Reshape_1 \
                 --input_height=299 --input_width=299 \
-                --labels imagenet_slim_labels.txt 
+                --labels imagenet_slim_labels.txt
 
-Where `<num_cores>` equals the number of cores in your processor. 
+Where `<num_cores>` equals the number of cores in your processor.
 
 #### Measure the time
 nGraph is a Just In Time (JIT) compiler meaning that the TensorFlow computation graph is compiled to nGraph during the first instance of the execution. From the second time onwards, the execution speeds up significantly. 
@@ -215,7 +215,7 @@ import time
 start = time.time()
 results = sess.run(output_operation.outputs[0], {
         input_operation.outputs[0]: t
-        })      
+        })
 elapsed = time.time() - start
 print('Time elapsed: %f seconds' % elapsed)
 ```

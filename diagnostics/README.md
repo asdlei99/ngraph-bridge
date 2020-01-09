@@ -28,7 +28,7 @@ To get a **full** dump use the following set of flags
 * ```NGRAPH_TF_LOG_PLACEMENT=1```: Generates op placement log at stdout
 * ```NGRAPH_TF_DUMP_CLUSTERS=1```: Dumps Encapsulated TF Graphs: ngraph_cluster_<cluster_num>
 * ```NGRAPH_TF_DUMP_GRAPHS=1```: Dumps TF graphs for different passes : precapture, capture, unmarked, marked, clustered, declustered, encapsulated
-* ```TF_CPP_MIN_VLOG_LEVEL=1```: Enables TF CPP Logs 
+* ```TF_CPP_MIN_VLOG_LEVEL=1```: Enables TF CPP Logs
 * ```NGRAPH_TF_DUMP_DECLUSTERED_GRAPHS=1```: Dumps graphs with final clusters assigned. Use this to view TF computation graph with colored nodes indicating clusters
 
 ### Visualizing encapsulates using TB
@@ -43,9 +43,9 @@ To get a **full** dump use the following set of flags
 * Disable ngraph by calling: ```ngraph_bridge.disable()```
 * Enable ngraph by calling: ```ngraph_bridge.enable()```
 * Checking whether ngraph is enabled by calling: ```ngraph.is_enabled()```
-* You need to enable ngraph every time you called ```ngraph_bridge.disable()```, so it is good to check 
+* You need to enable ngraph every time you called ```ngraph_bridge.disable()```, so it is good to check
 if ngraph is enabled by calling ```ngraph.is_enabled()```
-* _Caution_: The above functions are only effective at the beginning of the execution. Once the session is created and ```run``` is called, the above functions will not be able to disable ngraph. 
+* _Caution_: The above functions are only effective at the beginning of the execution. Once the session is created and ```run``` is called, the above functions will not be able to disable ngraph.
 * For example usage, take a look at the ```model_test/verify_model.py``` in the diagnostics folder
 
 
